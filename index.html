@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Portal</title>
+    <link rel="icon" href="./new-employee-icon-25.jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(to right, #4e73df, #1cc88a);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-bottom: 4px solid #333;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            font-weight: lighter;
+            font-family: 'Arial', sans-serif;
+        }
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        header nav ul li {
+            margin: 0 30px;
+            position: relative;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px;
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+        header nav ul li a:hover {
+            background-color: #ff9f00;
+            color: #333;
+        }
+        header nav ul li a:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ff9f00;
+            transition: width 0.3s;
+        }
+        header nav ul li a:hover:before {
+            width: 100%;
+        }
+        section {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        form input, form select, form textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form textarea {
+            resize: none;
+        }
+        .gender-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .gender-section label {
+            margin: 0 10px;
+        }
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-buttons input {
+            width: 48%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-buttons input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+        }
+        .form-buttons input[type="reset"] {
+            background-color: #dc3545;
+            color: white;
+        }
+        #employee-directory table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        #employee-directory th, #employee-directory td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        #employee-directory th {
+            background-color: #4e73df;
+            color: white;
+        }
+        #employee-directory tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        #employee-directory tr:hover {
+            background-color: #f1f1f1;
+        }
+        #contact-us iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            border: 0;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        #contact-us .contact-info {
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Employee Portal</h1>
+        <p>Your gateway to a smooth and efficient work experience</p>
+        <nav>
+            <ul>
+                <li><a href="#employee-registration">Employee Registration</a></li>
+                <li><a href="#employee-directory">Employee Directory</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <center><img src="./people-with-smartphones-huge-monitor-background_81522-1706.avif" alt="portal image" ></center> 
+    <hr>
+    <section id="employee-registration">
+        <h2>Employee Registration</h2>
+        <p>Fill the form below to register as an <em>Employee.</em></p>
+        <form action="">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required>
+            
+            <div class="gender-section">
+                <label>Gender:</label>
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="female" required> Female</label>
+                <label><input type="radio" name="gender" value="other" required> Other</label>
+            </div>
+            
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
+            
+            <label for="role">Select Role:</label>
+            <select id="role" required>
+                <option value="" disabled selected>Select from this</option>
+                <option value="Software-engineering">Software Engineering</option>
+                <option value="Product-manager">Product Manager</option>
+                <option value="Designer">Designer</option>
+                <option value="HR-representative">HR Representative</option>
+            </select>
+            
+            <label for="joining-date">Select Joining Date:</label>
+            <input type="date" id="joining-date" required>
+            
+            <label for="file-upload">Upload Documents:</label>
+            <input type="file" id="file-upload" required>
+            
+            <label for="address">Address:</label>
+            <textarea id="address" rows="4" required></textarea>
+            
+            <div class="form-buttons">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </section>
+    <hr>
+    <br><br><br><br>
+    <section id="employee-directory">
+        <h2>Employee Directory</h2>
+        <p>List of all registered employees.</p>
+        <table border="1">
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Employee Role</th>
+            </tr>
+            <tr>
+                <td>234</td>
+                <td>Riya Patil</td>
+                <td>Software Developer</td>
+            </tr>
+            <tr>
+                <td>342</td>
+            <td>Raj Sutar</td>
+            <td>Testor</td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>Ram Mehta</td>
+            <td>Senior HR</td>
+        </tr>
+        <tr>
+            <td>789</td>
+            <td>Priya Mehta</td>
+            <td>Product Manager</td>
+        </tr>
+        </table>
+
+    </section><br><br><br><br>
+    <hr>
+    <section id="contact-us">
+        <h2>contact us</h2>
+        <p>You can contact us at Employeeportal@official.com or 8976543214</p>
+        <p>Office Timming: 9am to 5pm.</p> 
+        <br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121031.39816327329!2d73.73951764335939!3d18.563612900000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c10062dba2ad%3A0xdf9e9ac21d1f8727!2sMicrosoft%20India%20(R%26D)%20Private%20Limited!5e0!3m2!1sen!2sin!4v1737051103607!5m2!1sen!2sin" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>       
+    </section>
+    <hr>
+    <footer>
+        <p>&copy; 2025  Employee Portal</p>
+    </footer>
+</body>
+</html>
